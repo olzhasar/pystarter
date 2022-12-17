@@ -1,0 +1,7 @@
+{
+  "project_name": "Example project",
+  "project_slug": "example-project",
+  "project_short_description": "Awesome project",
+  "version": "0.1.0",
+  "author": "John Doe"
+}
