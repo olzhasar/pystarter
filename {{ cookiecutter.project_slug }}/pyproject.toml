@@ -1,22 +1,27 @@
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
-version = "{{ cookiecutter.version }}"
+version = "0.1.0"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.author }}"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 
-[tool.poetry.dev-dependencies]
-black = "^22.12.0"
-isort = "^5.11.3"
-mypy = "^0.991"
-codespell = "^2.2.2"
-flake8 = "^6.0.0"
-flake8-bugbear = "^22.12.6"
-pre-commit = "^2.20.0"
-pytest = "^7.2.0"
-pytest-watcher = "^0.2.6"
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.2.1"
+black = "^24.2.0"
+isort = "^5.13.2"
+mypy = "^1.8.0"
+codespell = "^2.2.6"
+pre-commit = "^3.6.1"
+pytest = "^8.0.0"
+pytest-socket = "^0.7.0"
+pytest-xdist = "^3.5.0"
+pytest-watcher = "^0.4.1"
+pytest-mock = "^3.12.0"
+pytest-asyncio = "^0.23.5"
+pytest-freezegun = "^0.4.2"
+coverage = "^7.4.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -25,11 +30,11 @@ build-backend = "poetry.core.masonry.api"
 [tool.isort]
 profile = 'black'
 line_length = 89
-skip = ['.venv']
+skip = ['.venv', "venv"]
 
 [tool.black]
 line-length = 89
-target-version = ['py310']
+target-version = ['py311']
 include = '\.pyi?$'
 exclude = '''
     (
@@ -39,47 +44,32 @@ exclude = '''
     | \.mypy_cache
     | \.tox
     | \.venv
+    | \venv
     | _build
     | buck-out
     | build
     )
 '''
 
+[tool.ruff]
+exclude = [".venv", "venv"]
+line-length = 89
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 ignore_missing_imports = true
 warn_return_any = false
 warn_redundant_casts = true
 warn_unused_ignores = true
 disallow_untyped_defs = true
 disallow_any_unimported = false
-disallow_any_explicit = true
+disallow_any_explicit = false
 disallow_any_generics = true
 show_error_codes = true
 check_untyped_defs = true
-disable_error_code = ["misc"]
-exclude = ".venv"
-
-[[tool.mypy.overrides]]
-module = [
-  "tests.*",
-]
-disallow_untyped_defs = false
-disallow_any_generics = false
-
-[tool.codespell]
-skip = 'htmlcov,.git,.mypy_cache,poetry.lock,.venv,env,data'
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-
-[tool.coverage.run]
-omit = ["tests/*"]
-
-[tool.coverage.report]
-sort = "Cover"
-skip_covered = true
-exclude_lines = [
-  "pragma: no cover",
-  "if TYPE_CHECKING:",
-]
+exclude = [".venv", "venv"]
