@@ -1,3 +1,4 @@
 {
-  "project_slug": "example-project"
+  "project_slug": "example-project",
+  "use_docker": false
 }
