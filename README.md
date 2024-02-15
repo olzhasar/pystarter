@@ -1,11 +1,11 @@
-# pypackage
+# pystarter
 
-Python package cookiecutter template
+Python project starter cookiecutter template
 
 ## Features
 
 - [Poetry](https://python-poetry.org/) for dependency management
-- Pre-configured linting and static type checking (`flake8`, `isort`, `black`, `mypy`, `codespell`, `pre-commit`)
+- Pre-configured linting and static type checking (`ruff`, `isort`, `black`, `mypy`, `codespell`, `pre-commit`)
 - `Pytest` for testing
 
 ## TODO
