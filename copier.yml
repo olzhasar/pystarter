@@ -1,0 +1,8 @@
+project_name:
+  type: str
+  default: project
+project_description:
+  type: str
+  default: My project
+_templates_suffix: .j2
+_subdirectory: template

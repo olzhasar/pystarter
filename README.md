@@ -1,13 +1,24 @@
 # pystarter
 
-Python project starter cookiecutter template
+🚀 A minimal Python project starter template with modern tools
+
+> Simple is better than complex.
 
 ## Features
 
-- [Poetry](https://python-poetry.org/) for dependency management
-- Pre-configured linting and static type checking (`ruff`, `isort`, `black`, `mypy`, `codespell`, `pre-commit`)
-- `Pytest` for testing
+- Python 3.12
+- [uv](https://astral.sh/blog/uv) for dependency management
+- [ruff](https://docs.astral.sh/ruff/) for linting
+- [mypy](https://mypy-lang.org/) for static type checking
+- [pre-commit](https://pre-commit.com/)
+- [pytest](https://docs.pytest.org/en/stable/) with common plugins
 
-## TODO
+## Requirements
 
-- Default Github actions workflow
+- [copier](https://copier.readthedocs.io/en/stable/)
+
+## Usage
+
+```bash
+copier copy gh:olzhasar/pystarter path/to/destination
+```
