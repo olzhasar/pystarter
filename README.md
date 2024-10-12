@@ -22,3 +22,17 @@
 ```bash
 copier copy gh:olzhasar/pystarter path/to/destination
 ```
+
+## Result
+
+```bash
+.
+├── .gitignore
+├── .pre-commit-config.yaml
+├── README.md
+├── pyproject.toml
+└── tests
+    └── __init__.py
+```
+
+Yes, that's it!
