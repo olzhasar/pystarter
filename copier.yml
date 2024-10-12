@@ -4,5 +4,9 @@ project_name:
 project_description:
   type: str
   default: My project
+use_mypy:
+  type: bool
+  default: true
+  help: "Add mypy (static type checker)"
 _templates_suffix: .j2
 _subdirectory: template

@@ -9,7 +9,9 @@ dependencies = []
 [tool.uv]
 dev-dependencies = [
     "ruff",
+	{%- if use_mypy %}
     "mypy",
+	{%- endif %}
     "pre-commit",
     "freezegun",
     "pytest",
@@ -31,7 +33,7 @@ target-version = "py312"
 
 [tool.ruff.lint]
 extend-select = ["I"]
-
+{% if use_mypy %}
 [tool.mypy]
 python_version = "3.12"
 mypy_path = "src:tests"
@@ -47,3 +49,4 @@ disallow_untyped_defs = false
 disallow_incomplete_defs = false
 disallow_any_generics = false
 disallow_subclassing_any = false
+{%- endif -%}
