@@ -31,8 +31,10 @@ copier copy gh:olzhasar/pystarter path/to/destination
 ├── .pre-commit-config.yaml
 ├── README.md
 ├── pyproject.toml
+├── src
+│   └── main.py
 └── tests
     └── __init__.py
 ```
 
-Yes, that's it!
+Yes, that's it. Figure out the rest yourself.
